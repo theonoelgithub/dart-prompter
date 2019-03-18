@@ -1,5 +1,4 @@
-import 'package:dart_prompter_tn/src/option.dart';
-import 'package:dart_prompter_tn/src/prompter.dart';
+import 'package:dart_prompter_tn/dart_prompter_tn.dart';
 
 void main() {
   final options = [
@@ -9,5 +8,10 @@ void main() {
   ];
 
   final Prompter prompter = new Prompter();
-  print(prompter.ask('What color do you want?', options));
+
+  String colorCode = prompter.askMultiple('Select a color', options);
+
+  bool answer = prompter.askBinary('Do you like this lib?');
+
+  print ('$colorCode , $answer');
 }
